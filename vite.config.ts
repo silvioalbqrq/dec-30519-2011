@@ -206,6 +206,8 @@ function vitePluginStorageProxy(): Plugin {
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
 
 export default defineConfig({
+  // Publicações no GitHub Pages residem em /<repositório>/; o servidor Manus permanece na raiz.
+  base: process.env.GITHUB_PAGES ? "/dec-30519-2011/" : "/",
   plugins,
   resolve: {
     alias: {

@@ -1,0 +1,189 @@
+/**
+ * Design: Caderno Fiscal Cearense — tokens institucionais e superfícies de documento.
+ * O azul-petróleo organiza ações e hierarquia; névoa azulada sustenta leitura técnica.
+ */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.8rem;
+  --background: #f4f8fb;
+  --foreground: #1d3f52;
+  --card: #ffffff;
+  --card-foreground: #1d3f52;
+  --popover: #ffffff;
+  --popover-foreground: #1d3f52;
+  --primary: #0e4a69;
+  --primary-foreground: #ffffff;
+  --secondary: #eaf2f7;
+  --secondary-foreground: #164862;
+  --muted: #f2f6f9;
+  --muted-foreground: #617585;
+  --accent: #e5f2f9;
+  --accent-foreground: #0e4a69;
+  --destructive: #b23a3a;
+  --destructive-foreground: #ffffff;
+  --border: #dce8ef;
+  --input: #d8e3ea;
+  --ring: #14629a;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+
+  ::selection {
+    background: #b9dfef;
+    color: #0b3d59;
+  }
+}
+
+@layer components {
+  .fiscal-panel {
+    @apply overflow-hidden rounded-[1.1rem] border border-[#d4e2ea] bg-white shadow-[0_14px_34px_rgba(17,68,94,0.08)];
+  }
+
+  .section-kicker {
+    @apply text-[10px] font-extrabold uppercase tracking-[0.14em] text-[#14629A];
+  }
+
+  .tab-fiscal {
+    @apply flex items-center justify-center gap-2 rounded-xl border border-transparent bg-[#e9eef5] px-3 py-3 font-semibold text-slate-500 shadow-none transition duration-200 ease-out hover:bg-[#e2ebf2] hover:text-[#174862] data-[state=active]:border-[#14629A] data-[state=active]:bg-white data-[state=active]:text-[#0e4a69] data-[state=active]:shadow-[0_4px_12px_rgba(14,74,105,0.12)];
+  }
+
+  .field-fiscal {
+    @apply rounded-lg border border-slate-200 bg-white px-3.5 text-[15px] font-medium text-slate-800 shadow-sm transition outline-none focus:border-[#14629A] focus:ring-4 focus:ring-[#14629A]/10;
+  }
+
+  .btn-calcular {
+    @apply bg-[#0e4a69] text-white transition duration-200 ease-out hover:bg-[#0a3d58] active:scale-[0.97];
+  }
+
+  .memory-line {
+    @apply flex items-start justify-between gap-4 border-b border-[#dce8ef] pb-2.5 text-xs leading-5 text-slate-500;
+  }
+
+  .memory-line strong {
+    @apply shrink-0 text-right font-bold text-[#164862] [font-variant-numeric:tabular-nums];
+  }
+
+  .ledger-surface {
+    background-image: linear-gradient(to bottom, rgba(225, 237, 244, 0.5) 1px, transparent 1px);
+    background-size: 100% 42px;
+  }
+
+  .calculation-rail {
+    @apply grid gap-2 sm:grid-cols-4;
+  }
+
+  .rail-step {
+    @apply relative flex min-w-0 items-center gap-2 border-l border-[#cbdde7] py-1 pl-2.5 text-[11px] text-slate-400;
+  }
+
+  .rail-step span {
+    @apply flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-current font-display text-[9px] font-extrabold;
+  }
+
+  .rail-step strong {
+    @apply truncate font-bold tracking-[-0.01em];
+  }
+
+  .rail-step.is-active {
+    @apply border-[#14629A] text-[#14629A];
+  }
+
+  .ledger-preview {
+    @apply divide-y divide-[#dce8ef] border-y border-[#dce8ef] bg-white/70;
+  }
+
+  .ledger-preview li {
+    @apply grid grid-cols-[24px_minmax(0,1fr)] gap-x-2 py-2.5 text-xs;
+  }
+
+  .ledger-preview span {
+    @apply row-span-2 flex h-5 w-5 items-center justify-center rounded-full bg-[#e4f2f8] font-display text-[9px] font-extrabold text-[#14629A];
+  }
+
+  .ledger-preview strong {
+    @apply font-bold text-[#164862];
+  }
+
+  .ledger-preview em {
+    @apply mt-0.5 text-[10px] not-italic text-slate-400;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fiscal-panel,
+  .tab-fiscal,
+  .field-fiscal,
+  .btn-calcular {
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .fiscal-panel {
+    animation: fiscal-enter 360ms cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+}
+
+@keyframes fiscal-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

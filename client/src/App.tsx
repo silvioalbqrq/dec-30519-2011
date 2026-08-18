@@ -15,7 +15,8 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/404" component={NotFound} />
-      <Route component={NotFound} />
+      {/* GitHub Pages serve esta SPA sob /dec-30519-2011/; rotas não reconhecidas retornam à calculadora. */}
+      <Route component={Home} />
     </Switch>
   );
 }

@@ -317,7 +317,7 @@ export default function Home() {
         className="relative isolate overflow-hidden border-b border-[#0b4564] bg-[#0e4a69] text-white"
         style={{
           backgroundImage:
-            "linear-gradient(105deg, rgba(9,62,90,0.93) 0%, rgba(17,95,145,0.9) 100%), url('/manus-storage/icms-st-hero-texture_babc1c48.jpg')",
+            "linear-gradient(105deg, rgba(9,62,90,0.93) 0%, rgba(17,95,145,0.9) 100%), url('/dec-30519-2011/assets/icms-st-hero-texture.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -326,7 +326,7 @@ export default function Home() {
         <div className="relative mx-auto flex min-h-[188px] max-w-6xl flex-col justify-center px-5 py-7 sm:px-8 lg:px-10">
           <div className="mb-3 flex items-center justify-center gap-3">
             <img
-              src="/manus-storage/icms-st-mark_813d8852.png"
+              src="/dec-30519-2011/assets/icms-st-mark.png"
               alt="Marca gráfica da calculadora"
               className="h-10 w-10 rounded-xl bg-white/10 p-1.5 shadow-lg ring-1 ring-white/25"
             />
@@ -351,7 +351,7 @@ export default function Home() {
         className="relative bg-[#f4f8fb] pb-14 pt-7 sm:pt-9"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(244,248,251,0.92), rgba(244,248,251,0.96)), url('/manus-storage/icms-st-paper-texture_e82d188c.jpg')",
+            "linear-gradient(rgba(244,248,251,0.92), rgba(244,248,251,0.96)), url('/dec-30519-2011/assets/icms-st-paper-texture.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center top",
         }}
@@ -605,7 +605,7 @@ export default function Home() {
 
                 <aside className="relative overflow-hidden border-t border-slate-200 bg-[#f6fbfe] p-5 sm:p-7 lg:border-l lg:border-t-0" aria-live="polite">
                   <img
-                    src="/manus-storage/icms-st-result-pattern_536cd5cf.jpg"
+                    src="/dec-30519-2011/assets/icms-st-result-pattern.jpg"
                     alt=""
                     aria-hidden="true"
                     className="pointer-events-none absolute -right-10 top-6 w-56 opacity-[0.11] mix-blend-multiply"
@@ -618,7 +618,7 @@ export default function Home() {
                     {resultado ? (
                       <>
                         <div className="mt-1 flex items-center gap-2">
-                          <img src="/manus-storage/icms-st-mark_813d8852.png" alt="" aria-hidden="true" className="h-7 w-7 rounded-md bg-[#e6f2f8] p-1" />
+                          <img src="/dec-30519-2011/assets/icms-st-mark.png" alt="" aria-hidden="true" className="h-7 w-7 rounded-md bg-[#e6f2f8] p-1" />
                           <h3 className="font-display text-[21px] font-extrabold tracking-[-0.035em] text-[#123e55]">Memória de cálculo</h3>
                         </div>
                         <p className="mt-1 text-xs leading-5 text-slate-500">Rastro dos parâmetros que formaram a estimativa.</p>
@@ -651,7 +651,7 @@ export default function Home() {
                     ) : (
                       <>
                         <div className="mt-1 flex items-center gap-2">
-                          <img src="/manus-storage/icms-st-mark_813d8852.png" alt="" aria-hidden="true" className="h-7 w-7 rounded-md bg-[#e6f2f8] p-1" />
+                          <img src="/dec-30519-2011/assets/icms-st-mark.png" alt="" aria-hidden="true" className="h-7 w-7 rounded-md bg-[#e6f2f8] p-1" />
                           <h3 className="font-display text-[21px] font-extrabold tracking-[-0.035em] text-[#123e55]">Pronto para conferir</h3>
                         </div>
                         <p className="mt-3 text-sm leading-6 text-slate-500">Preencha os valores da entrada e clique em <strong className="font-semibold text-[#15465f]">Calcular estimativa</strong>. Esta coluna já antecipa o rastro que será montado.</p>
